@@ -1,0 +1,20 @@
+string	categoría gramatical	significado	meaning	opuesto	regular	reflexivo	trenbaar	masculino/femenino	preposición
+stug	adjective	rígido	stiff	n/a	n/a	n/a	n/a	n/a
+meeste	adjective	la mayoría	most	n/a	n/a	n/a	n/a	n/a
+opvolger	substantive	seguidor	n/a	voorganger	n/a	n/a	1	n/a
+beroering	substantive	conmoción	turmoil	n/a	n/a	n/a	1	n/a
+ophef	substantive	barullo	fuss	n/a	n/a	n/a	n/a	n/a
+ketterij	substantive	herejía	heresy	n/a	n/a	n/a	1	n/a
+dienst	substantive	servicio	n/a	n/a	n/a	n/a	1	n/a
+loonkloof	substantive	servicio	n/a	n/a	n/a	n/a	1	n/a
+werk	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a
+misterie	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a
+opleveren	verbo	reportar	deliver	n/a	1	0	1	n/a	0
+oprekken	verbo	estirar	stretch	n/a	1	0	1	n/a	0
+uitroepen	verbo	proclamar		n/a	0	0	1	n/a	tot
+meemaken	verbo	vivir	experience	n/a	1	0	1	n/a	n/a
+meevallen	verbo	sorprender positivamente	fulfill expectations	teleurstellen	0	0	1	n/a	n/a
+bezinnen	verbo	reflexionar	reflect	n/a	0	1	0	n/a	n/a
+leiden	verbo	llevar a	take to	n/a	0	1	0	n/a	tot
+wekken	verbo	despertar	awaken	n/a	1	0	0	n/a	n/a
+
