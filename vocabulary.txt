@@ -1,20 +1,20 @@
-string	categoría gramatical	significado	meaning	opuesto	regular	reflexivo	trenbaar	masculino/femenino	preposición
-stug	adjective	rígido	stiff	n/a	n/a	n/a	n/a	n/a
-meeste	adjective	la mayoría	most	n/a	n/a	n/a	n/a	n/a
-opvolger	substantive	seguidor	n/a	voorganger	n/a	n/a	1	n/a
-beroering	substantive	conmoción	turmoil	n/a	n/a	n/a	1	n/a
-ophef	substantive	barullo	fuss	n/a	n/a	n/a	n/a	n/a
-ketterij	substantive	herejía	heresy	n/a	n/a	n/a	1	n/a
-dienst	substantive	servicio	n/a	n/a	n/a	n/a	1	n/a
-loonkloof	substantive	servicio	n/a	n/a	n/a	n/a	1	n/a
-werk	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a
-misterie	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a
-opleveren	verbo	reportar	deliver	n/a	1	0	1	n/a	0
-oprekken	verbo	estirar	stretch	n/a	1	0	1	n/a	0
-uitroepen	verbo	proclamar		n/a	0	0	1	n/a	tot
-meemaken	verbo	vivir	experience	n/a	1	0	1	n/a	n/a
-meevallen	verbo	sorprender positivamente	fulfill expectations	teleurstellen	0	0	1	n/a	n/a
-bezinnen	verbo	reflexionar	reflect	n/a	0	1	0	n/a	n/a
-leiden	verbo	llevar a	take to	n/a	0	1	0	n/a	tot
-wekken	verbo	despertar	awaken	n/a	1	0	0	n/a	n/a
-
+A	B	C	D	E	F	G	H	I	J	K
+1	stug	adjective	rígido	stiff	n/a	n/a	n/a	n/a	n/a	n/a
+2	meeste	adjective	la mayoría	most	n/a	n/a	n/a	n/a	n/a	n/a
+3	opvolger	substantive	seguidor	n/a	voorganger	n/a	n/a	1	n/a	n/a
+4	beroering	substantive	conmoción	turmoil	n/a	n/a	n/a	1	n/a	n/a
+5	ophef	substantive	barullo	fuss	n/a	n/a	n/a	n/a	n/a	n/a
+6	ketterij	substantive	herejía	heresy	n/a	n/a	n/a	1	n/a	n/a
+7	dienst	substantive	servicio	n/a	n/a	n/a	n/a	1	n/a	n/a
+8	loonkloof	substantive	brecha salarial	n/a	n/a	n/a	n/a	1	n/a	n/a
+9	werk	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a	n/a
+10	misterie	substantive	misterio	n/a	n/a	n/a	n/a	0	n/a	n/a
+11	tijdstip	substantive	momento	n/a	n/a	n/a	n/a	0	n/a	n/a
+12	opleveren	verbo	reportar	deliver	n/a	1	0	1	n/a	n/a
+13	oprekken	verbo	estirar	stretch	n/a	1	0	1	n/a	n/a
+14	vuitroepen	verbo	proclamar		n/a	0	0	1	n/a	tot
+15	meemaken	verbo	vivir	experience	n/a	1	0	1	n/a	n/a
+16	meevallen	verbo	sorprender positivamente	fulfill expectations	teleurstellen	0	0	1	n/a	n/a
+17	bezinnen	verbo	reflexionar	reflect	n/a	0	1	0	n/a	n/a
+18	leiden	verbo	llevar a	take to	n/a	0	1	0	n/a	tot
+19	wekken	verbo	despertar	awaken	n/a	1	0	0	n/a	n/a
