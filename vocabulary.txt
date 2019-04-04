@@ -10,11 +10,11 @@ A	B	C	D	E	F	G	H	I	J	K
 9	werk	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a	n/a
 10	misterie	substantive	misterio	n/a	n/a	n/a	n/a	0	n/a	n/a
 11	tijdstip	substantive	momento	n/a	n/a	n/a	n/a	0	n/a	n/a
-12	opleveren	verbo	reportar	deliver	n/a	1	0	1	n/a	n/a
-13	oprekken	verbo	estirar	stretch	n/a	1	0	1	n/a	n/a
-14	vuitroepen	verbo	proclamar		n/a	0	0	1	n/a	tot
-15	meemaken	verbo	vivir	experience	n/a	1	0	1	n/a	n/a
-16	meevallen	verbo	sorprender positivamente	fulfill expectations	teleurstellen	0	0	1	n/a	n/a
-17	bezinnen	verbo	reflexionar	reflect	n/a	0	1	0	n/a	n/a
-18	leiden	verbo	llevar a	take to	n/a	0	1	0	n/a	tot
-19	wekken	verbo	despertar	awaken	n/a	1	0	0	n/a	n/a
+12	opleveren	verb	reportar	deliver	n/a	1	0	1	n/a	n/a
+13	oprekken	verb	estirar	stretch	n/a	1	0	1	n/a	n/a
+14	uitroepen	verb	proclamar		n/a	0	0	1	n/a	tot
+15	meemaken	verb	vivir	experience	n/a	1	0	1	n/a	n/a
+16	meevallen	verb	sorprender positivamente	fulfill expectations	teleurstellen	0	0	1	n/a	n/a
+17	bezinnen	verb	reflexionar	reflect	n/a	0	1	0	n/a	n/a
+18	leiden	verb	llevar a	take to	n/a	0	1	0	n/a	tot
+19	wekken	verb	despertar	awaken	n/a	1	0	0	n/a	n/a
