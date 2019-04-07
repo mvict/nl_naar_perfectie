@@ -1,20 +1,19 @@
-A	B	C	D	E	F	G	H	I	J	K
-1	stug	adjective	rígido	stiff	n/a	n/a	n/a	n/a	n/a	n/a
-2	meeste	adjective	la mayoría	most	n/a	n/a	n/a	n/a	n/a	n/a
-3	opvolger	substantive	seguidor	n/a	voorganger	n/a	n/a	1	n/a	n/a
-4	beroering	substantive	conmoción	turmoil	n/a	n/a	n/a	1	n/a	n/a
-5	ophef	substantive	barullo	fuss	n/a	n/a	n/a	n/a	n/a	n/a
-6	ketterij	substantive	herejía	heresy	n/a	n/a	n/a	1	n/a	n/a
-7	dienst	substantive	servicio	n/a	n/a	n/a	n/a	1	n/a	n/a
-8	loonkloof	substantive	brecha salarial	n/a	n/a	n/a	n/a	1	n/a	n/a
-9	werk	substantive	trabajo	n/a	n/a	n/a	n/a	0	n/a	n/a
-10	misterie	substantive	misterio	n/a	n/a	n/a	n/a	0	n/a	n/a
-11	tijdstip	substantive	momento	n/a	n/a	n/a	n/a	0	n/a	n/a
-12	opleveren	verb	reportar	deliver	n/a	1	0	1	n/a	n/a
-13	oprekken	verb	estirar	stretch	n/a	1	0	1	n/a	n/a
-14	uitroepen	verb	proclamar		n/a	0	0	1	n/a	tot
-15	meemaken	verb	vivir	experience	n/a	1	0	1	n/a	n/a
-16	meevallen	verb	sorprender positivamente	fulfill expectations	teleurstellen	0	0	1	n/a	n/a
-17	bezinnen	verb	reflexionar	reflect	n/a	0	1	0	n/a	n/a
-18	leiden	verb	llevar a	take to	n/a	0	1	0	n/a	tot
-19	wekken	verb	despertar	awaken	n/a	1	0	0	n/a	n/a
+1	stug	adjective	rígido	stiff	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+2	meeste	adjective	la mayoría	most	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+3	opvolger	noun	seguidor	n/a	voorganger	n/a	n/a	TRUE	de	n/a	n/a	opvolgers
+4	beroering	noun	conmoción	turmoil	n/a	n/a	n/a	TRUE	de	n/a	n/a	beroeringen
+5	ophef	noun	barullo	fuss	n/a	n/a	n/a	n/a	de	n/a	n/a	n/a
+6	ketterij	noun	herejía	heresy	n/a	n/a	n/a	TRUE	de	n/a	n/a	ketterijen
+7	dienst	noun	servicio	n/a	n/a	n/a	n/a	TRUE	de	n/a	n/a	diensten
+8	loonkloof	noun	brecha salarial	n/a	n/a	n/a	n/a	TRUE	de	n/a	n/a	loonkloven
+9	werk	noun	trabajo	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	n/a
+10	misterie	noun	misterio	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	misterieën
+11	tijdstip	noun	momento	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	tijdstippen
+12	opleveren	verb	reportar	deliver	n/a	TRUE	FALSE	TRUE	n/a	n/a	n/a	n/a
+13	oprekken	verb	estirar	stretch	n/a	TRUE	FALSE	TRUE	n/a	n/a	n/a	n/a
+14	uitroepen	verb	proclamar		n/a	FALSE	FALSE	TRUE	n/a	tot	uit riep, uitgeroepen	n/a
+15	meemaken	verb	vivir	experience	n/a	TRUE	FALSE	TRUE	n/a	n/a	n/a	n/a
+16	meevallen	verb	sorprender positivamente	fulfill expectations	teleurstellen	FALSE	FALSE	TRUE	n/a	n/a	viel mee, meegevallen	n/a
+17	bezinnen	verb	reflexionar	reflect	n/a	FALSE	TRUE	FALSE	n/a	n/a	bezon, bezonnen	n/a
+18	leiden	verb	llevar a	take to	n/a	TRUE	TRUE	FALSE	n/a	tot	n/a	n/a
+19	wekken	verb	despertar	awaken	n/a	TRUE	FALSE	FALSE	n/a	n/a	n/a	n/a
