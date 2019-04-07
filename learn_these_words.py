@@ -56,35 +56,18 @@ class Question:
         answer = chosen_question[1]
         return question, answer
 
+def build_exercise(number_of_tries, vocabulary):
+    while number_of_tries:
+        this_record = random.choice(vocabulary)
+        q = Question(this_record)
+        question, answer = q.question_answer()
+        user_answer = input(question)
+        if user_answer == answer:
+            print ("so far so good")
+        else:
+            print("not yet there, the answer is {}".format(answer))
+        number_of_tries -= 1
 
-def build_exercise(number_of_tries, vocabulary_file, category):
-        with codecs.open(vocabulary_file, 'r','UTF-8') as input_file:
-            # complete vocabulary contains all records in file
-            complete_vocabulary = [row.rstrip('\r\n').split('\t') for row in input_file]
-
-            # todo write flow when no category is chosen
-
-            # complete_set contains all records in file with the given category
-            complete_set = [row for row in complete_vocabulary if row[2] == category]
-            print(complete_set)
-
-            # random.shuffle mixed the order of the elements of the list
-            # random.shuffle(complete_set)
-
-            while number_of_tries:
-                this_record = random.choice(complete_set)
-                q = Question(this_record)
-                # q = Question(complete_set[number_of_tries])
-                question, answer = q.question_answer()
-                user_answer = input(question)
-                if user_answer == answer:
-                    print ("so far so good")
-                else:
-                    print("not yet there, the answer is {}".format(answer))
-                number_of_tries -= 1
-
-
-# todo move to test file
 
 def check_number_of_fields(vocabulary_file):
         with codecs.open(vocabulary_file, 'r','UTF-8') as input_file:
@@ -98,7 +81,22 @@ def check_number_of_fields(vocabulary_file):
                     print ("Number of fields in line number {} is not as expected".format(line_number))
         return True
 
+
+def chose_vocabulary(file_name, category):
+    with codecs.open(file_name, 'r', 'UTF-8') as input_file:
+        # complete vocabulary contains all records in file
+        complete_vocabulary = [row.rstrip('\r\n').split('\t') for row in input_file]
+        # if no category is given as argument
+        if category is None:
+            return complete_vocabulary
+        else:
+            return [row for row in complete_vocabulary if row[2] == category]
+
+
 # todo write module to write new vocabulary file
+# todo write score module
+# todo move check number of fields to test file
+
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('-n', dest='number_of_words', help='number of words to practice', type=int)
@@ -107,11 +105,14 @@ def main():
     parser.add_argument('-l', dest='list', help='Name of the list to practice')
 
     args = parser.parse_args()
+
     vocabulary_file_name = args.list
     number_of_tries = args.number_of_words
     category = args.category
+
     check_number_of_fields(vocabulary_file_name)
-    build_exercise(number_of_tries, vocabulary_file_name, category)
+    chosen_vocabulary = chose_vocabulary(vocabulary_file_name,category)
+    build_exercise(number_of_tries, chosen_vocabulary)
 
 
 if __name__ == "__main__":
