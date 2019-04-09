@@ -7,6 +7,9 @@ import argparse
 import codecs
 import random
 
+# two global variables for now
+global_failures_counter = 0
+global_success_counter = 0
 
 # complete_vocabulary = [0 "id", 1 "string", 2 "pos", 3 "meaning", 4 "english", 5 "opposite", 6 "regular", 7"reflexive",
 #                                 8"trenbaar", 9"gender", 10"preposition", 11 "vervoeging", 12 plural_form]
@@ -15,7 +18,8 @@ class Question:
     def __init__(self, record):
         self._word = record[1]
         self._meaning = record[3]
-        self._vragen = [["wat betekent {} >>> ".format(record[1]),record[3]]]
+        self._vragen = [["wat betekent {} >>> ".format(record[1]),record[3]],
+                        ["Hoe zeg je '{}' in Nederlands >>> ".format(record[3]),record[1]]]
 
         if record[2] == 'verb':
             self._is_regular = record[6]
@@ -41,7 +45,7 @@ class Question:
             self._vragen.append([question2, answer2])
 
     def __noun_question(self):
-        question1 = "Wat is de meervoud form van {} >>> ".format(self._word)
+        question1 = "Wat is de meervoud form van {} {} >>> ".format(self._article,self._word)
         answer1 = self._plural
         self._vragen.append([question1, answer1])
 
@@ -51,10 +55,22 @@ class Question:
 
     def question_answer(self):
         chosen_question = random.choice(self._vragen)
-        print (self._vragen)
+        # print (self._vragen)
         question = chosen_question[0]
         answer = chosen_question[1]
         return question, answer
+
+def give_feedback_on_result(answer, user_answer):
+    global global_failures_counter
+    global global_success_counter
+
+    if user_answer == answer:
+        print("So far so good\n")
+        global_success_counter += 1
+    else:
+        print("Not yet there, the answer is {}\n".format(answer))
+        global_failures_counter += 1
+
 
 def build_exercise(number_of_tries, vocabulary):
     while number_of_tries:
@@ -62,10 +78,7 @@ def build_exercise(number_of_tries, vocabulary):
         q = Question(this_record)
         question, answer = q.question_answer()
         user_answer = input(question)
-        if user_answer == answer:
-            print ("so far so good")
-        else:
-            print("not yet there, the answer is {}".format(answer))
+        give_feedback_on_result(answer, user_answer)
         number_of_tries -= 1
 
 
@@ -93,8 +106,14 @@ def chose_vocabulary(file_name, category):
             return [row for row in complete_vocabulary if row[2] == category]
 
 
-# todo write module to write new vocabulary file
-# todo write score module
+def summarize_performance(number_of_tries):
+    print("\n############################################\n")
+    print("This is your result: ")
+    print("You got {} questions.".format(str(number_of_tries)))
+    print("You answered {} questions correctly.".format(str(global_success_counter)))
+    print("You answered {} questions wrongly.".format(str(global_failures_counter)))
+    print("\n############################################\n")
+
 # todo move check number of fields to test file
 
 def main():
@@ -113,7 +132,7 @@ def main():
     check_number_of_fields(vocabulary_file_name)
     chosen_vocabulary = chose_vocabulary(vocabulary_file_name,category)
     build_exercise(number_of_tries, chosen_vocabulary)
-
+    summarize_performance(number_of_tries)
 
 if __name__ == "__main__":
     main()

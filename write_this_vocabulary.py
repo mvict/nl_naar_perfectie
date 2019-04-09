@@ -6,6 +6,7 @@
 
 import codecs
 
+
 class GiveMeYourWord:
     def __init__(self,number):
         self._number = number
@@ -33,7 +34,7 @@ class GiveMeYourWord:
         separable = input("Is this verb separable? (answer TRUE or FALSE) >>> ".format(self._word))
         regular = input("Is this verb regular? (answer TRUE or FALSE) >>> ".format(self._word))
 
-        if regular == 'TRUE':
+        if regular == 'FALSE':
             declination = input("What is the past and past particle of {} >>> ".format(self._word))
         else:
             declination = 'n/a'

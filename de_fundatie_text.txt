@@ -1,0 +1,11 @@
+11	naadloos	adjective	sin costuras	seamless	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+10	tegerlijkertijd	adjective	al mismo tiempo	at the same time	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+9	mysterieuze	adjective	misterioso	misterious	n/a	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+8	gelden	verb	servir	serve 	n/a	FALSE	FALSE	FALSE	n/a	voor	gold, gegolden	n/a
+7	lijken	verb	parecer	seem	n/a	FALSE	FALSE	FALSE	n/a	op	leek, geleken	n/a
+6	gat	noun	agujero	hole	n/a	n/a	n/a	n/a	het	n/a	n/a	gatten
+5	zuigen	verb	sorber	suck	n/a	FALSE	FALSE	FALSE	n/a	n/a	zoog, gezogen	n/a
+4	uitstraling	noun	apariencia	appearance	n/a	n/a	n/a	n/a	de	n/a	n/a	uitstralingen
+3	lotsbestemming	noun	destino	destiny	n/a	n/a	n/a	n/a	de	n/a	n/a	lotsbestemmingen
+2	onheilspellend	adjective	ominoso	ominous	seamless	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+1	aansluiten	verb	unirse	connectarse	n/a	FALSE	FALSE	FALSE	n/a	op elkaar	sloot aan, aangesloten	n/a
