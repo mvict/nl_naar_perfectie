@@ -115,6 +115,7 @@ def summarize_performance(number_of_tries):
     print("\n############################################\n")
 
 # todo move check number of fields to test file
+# todo change strings to ask question to constants, no magic questions.
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -129,6 +130,7 @@ def main():
     number_of_tries = args.number_of_words
     category = args.category
 
+    # check number of fields
     check_number_of_fields(vocabulary_file_name)
     chosen_vocabulary = chose_vocabulary(vocabulary_file_name,category)
     build_exercise(number_of_tries, chosen_vocabulary)

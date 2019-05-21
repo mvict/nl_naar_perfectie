@@ -17,3 +17,5 @@
 17	bezinnen	verb	reflexionar	reflect	n/a	FALSE	TRUE	FALSE	n/a	n/a	bezon, bezonnen	n/a
 18	leiden	verb	llevar a	take to	n/a	TRUE	TRUE	FALSE	n/a	tot	n/a	n/a
 19	wekken	verb	despertar	awaken	n/a	TRUE	FALSE	FALSE	n/a	n/a	n/a	n/a
+20	advies	noun	consejo	n/a	advice	n/a	n/a	TRUE	de	n/a	n/a	adviezen
+21	assessment	noun	examen	n/a	assessment	n/a	n/a	TRUE	de	n/a	n/a	assessments
