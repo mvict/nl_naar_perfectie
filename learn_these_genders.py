@@ -2,6 +2,8 @@ import argparse
 import codecs
 import random
 
+DEBUG = False
+
 # this program uses a vocabulary table to extract a word an its gender and
 # makes a question to the user, keeps tracks of the amount of failures and 
 # successes
@@ -11,10 +13,12 @@ import random
 # UI strings
 # TODO: use only one ui language
 ARTICLE = "Wat is het lidwoord van {} >>> "
-CORRECT_ANSWERS = "You answered {} questions correctly."
-NUMBER_OF_QUESTIONS = "You got {} questions."
-RESULT = "This is your result: "
-WRONG_ANSWERS = "You answered {} questions wrongly."
+CORRECT_ANSWERS = "{} antwoorden waren correct"
+NUMBER_OF_QUESTIONS = "Je hebt {} vragen geantwoord."
+RESULT = "Dit is je resultaat "
+RIGHT_GUESS = "Precies, een {}-woord"
+WRONG_ANSWERS = "{} antwoorden waren fout"
+WRONG_GUESS = 'Nee hoor, het juiste lidwoord is \'{}\'.'
 WRONGNUMBEROFFIELDS = "Number of fields in line number {} is not as expected"
 
 
@@ -22,6 +26,7 @@ def chose_vocabulary(file_name):
     with codecs.open(file_name, 'r', 'UTF-8') as input_file:
         # all_vocabulary contains all records in file
         all_vocabulary = [row.rstrip('\r\n').split('\t') for row in input_file]
+        # it returns a dictionary, index is the word, value is the gender
         return {row[1]: row[9] for row in all_vocabulary if row[2] == 'noun'}
 
 
@@ -34,40 +39,46 @@ def summarize_performance(right, wrong, number_of_tries):
     print("\n############################################\n")
 
 
-def make_questions(times, questions):
+def make_questions(tries, nouns_dct):
     success_counter = 0
     failures_counter = 0
 
-    while(times):
-        word = random.choice([key for key in questions.keys()])
+    while(tries):
+        word = random.choice([key for key in nouns_dct.keys()])
+        # ask user for article used with word
         answer = input(ARTICLE.format(word))
-        article = questions[word]
+        article = nouns_dct[word]
 
+        # give user feedback about answer
         if answer == article:
             success_counter += 1
-            print(f'Precies, een {article}-woord')
+            print(RIGHT_GUESS.format(article))
         else:
             failures_counter += 1
-            print(f'Nee hoor, het juiste lidwoord is \'{article}\'.')
-        times -= 1
+            print(WRONG_GUESS.format(article))
+
+        tries -= 1
     return success_counter, failures_counter
 
 def main():
     parser = argparse.ArgumentParser(description='Learn de/het words')
-    parser.add_argument('-n', dest='number_of_words',
-                        help='number of words to practice', type=int)
-    parser.add_argument('-l', dest='list', help='Name of the list to practice')
+    parser.add_argument('-n', dest='number_of_words', default=10,
+                        help='Number of words to practice', type=int)
+    parser.add_argument('-l', dest='list', help='Name of the list to practice',
+                        default="de_fundatie_text.txt")
 
     args = parser.parse_args()
 
     vocabulary_file_name = args.list
     number_of_tries = args.number_of_words
 
-    # check number of fields
-    # check_number_of_fields(vocabulary_file_name)
-    #
+    # TODO write a file with common constants and functions
+    # if DEBUG:
+    #     # check number of fields
+    #     check_number_of_fields(vocabulary_file_name)
+    
     chosen_vocabulary = chose_vocabulary(vocabulary_file_name)
-    print(f"available words are: {len(chosen_vocabulary)}")
+    print(f"Beschikbare woorden: {len(chosen_vocabulary)}")
     right, wrong = make_questions(number_of_tries, chosen_vocabulary)
     summarize_performance(right, wrong, number_of_tries)
 

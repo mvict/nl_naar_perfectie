@@ -7,7 +7,7 @@
 7	dienst	noun	servicio	n/a	n/a	n/a	n/a	TRUE	de	n/a	n/a	diensten
 8	loonkloof	noun	brecha salarial	n/a	n/a	n/a	n/a	TRUE	de	n/a	n/a	loonkloven
 9	werk	noun	trabajo	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	n/a
-10	misterie	noun	misterio	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	misterieën
+10	mysterie	noun	misterio	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	misterieën
 11	tijdstip	noun	momento	n/a	n/a	n/a	n/a	FALSE	het	n/a	n/a	tijdstippen
 12	opleveren	verb	reportar	deliver	n/a	TRUE	FALSE	TRUE	n/a	n/a	n/a	n/a
 13	oprekken	verb	estirar	stretch	n/a	TRUE	FALSE	TRUE	n/a	n/a	n/a	n/a

@@ -133,8 +133,8 @@ def summarize_performance(number_of_tries):
     print(WRONG_ANSWERS.format(str(global_failures_counter)))
     print("\n############################################\n")
 
-# todo move check number of fields to test file
-# todo change strings to ask question to constants, no magic questions.
+# TODO move check number of fields to test file
+# TODO change strings to ask question to constants, no magic questions.
 
 
 def main():
