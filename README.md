@@ -40,19 +40,8 @@ Gives a summary of the result: number of words asked, number of wrong and right 
 
 
 
-
-
-
 # kijk ook naar deze bronnen van informatie
 https://www.welklidwoord.be/<woord>
-
-1. esto
-24. aquello
-3. lo de más allá
-
-* esto
-* aquello
-* lo de más allá
 
 28/10/2021
 
