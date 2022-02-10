@@ -45,25 +45,3 @@ if page_with_nouns.status_code == requests.codes.ok:
                 print("YEAH!")
             else:
                 print("Nope")
-
-    # tag = nouns.div
-    
-
-    # zoek het lidwoord van een woord
-    # zoek in je bestanden
-    # staat het woord niet in?
-    #   zoek online
-    #
-    # is een het-woord ? 
-        # bewaar het in het.txt
-    # is het een de-woord?
-        # bewaar het in de.txt
-    # else: bewaar het in ongedefineerd.txt
-
-    
-    # zoek online
-    # is een het-woord ? 
-        # bewaar het in het.txt (niet bewaren als het al in zit)
-    # is het een de-woord?
-        # bewaar het in de.txt
-    # else: bewaar het in ongedefineerd.txt (niet bewaren als het al in zit)

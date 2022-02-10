@@ -5,7 +5,13 @@
 # import nltk
 import argparse
 import codecs
+import os
 import random
+
+# name of the directory for vocabularies
+SOURCES = "vocabularies"
+
+DEBUG = False
 
 # two global variables for now
 global_failures_counter = 0
@@ -102,6 +108,7 @@ def build_exercise(number_of_tries, vocabulary):
 
 # control function to check that the data file is correct
 def check_number_of_fields(vocabulary_file):
+    vocabulary_file = os.path.join(SOURCES, vocabulary_file)
     with codecs.open(vocabulary_file, 'r', 'UTF-8') as input_file:
         line_number = 0
         for row in input_file:
@@ -115,6 +122,7 @@ def check_number_of_fields(vocabulary_file):
 
 
 def chose_vocabulary(file_name, category):
+    file_name = os.path.join(SOURCES, file_name)
     with codecs.open(file_name, 'r', 'UTF-8') as input_file:
         # all_vocabulary contains all records in file
         all_vocabulary = [row.rstrip('\r\n').split('\t') for row in input_file]
@@ -126,15 +134,12 @@ def chose_vocabulary(file_name, category):
 
 
 def summarize_performance(number_of_tries):
-    print("\n############################################\n")
+    print("\n" + 45 * "#" + "\n")
     print(RESULT)
     print(NUMBER_OF_QUESTIONS.format(str(number_of_tries)))
     print(CORRECT_ANSWERS.format(str(global_success_counter)))
     print(WRONG_ANSWERS.format(str(global_failures_counter)))
-    print("\n############################################\n")
-
-# TODO move check number of fields to test file
-# TODO change strings to ask question to constants, no magic questions.
+    print("\n" + 45 * "#" + "\n")
 
 
 def main():
@@ -143,7 +148,8 @@ def main():
                         help='number of words to practice', type=int)
     parser.add_argument('-c', dest='category', help='Grammar category')
     # parser.add_argument('-t', dest='type', help='Type of exercise')
-    parser.add_argument('-l', dest='list', help='Name of the list to practice')
+    parser.add_argument('-l', dest='list', help='Name of the list to practice',
+                        default='de_fundatie_text.txt')
 
     args = parser.parse_args()
 
@@ -152,7 +158,9 @@ def main():
     category = args.category
 
     # check number of fields
-    check_number_of_fields(vocabulary_file_name)
+    if DEBUG:
+        check_number_of_fields(vocabulary_file_name)
+
     chosen_vocabulary = chose_vocabulary(vocabulary_file_name, category)
     build_exercise(number_of_tries, chosen_vocabulary)
     summarize_performance(number_of_tries)

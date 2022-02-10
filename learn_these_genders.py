@@ -1,17 +1,16 @@
 import argparse
 import codecs
 import random
-
-DEBUG = False
+import os
 
 # this program uses a vocabulary table to extract a word an its gender and
 # makes a question to the user, keeps tracks of the amount of failures and 
 # successes
 # thought: there are many ways to solve this, I make a dct with an entry per word
-# would it be better to make a dicctionary like {'het': [w1, w3], 'de': [w2]}?
+# Other possible ways: {'het': [w1, w3], 'de': [w2]}?
+# or even better het = [w1, w3, w4], de = [w2]
 
 # UI strings
-# TODO: use only one ui language
 ARTICLE = "Wat is het lidwoord van {} >>> "
 CORRECT_ANSWERS = "{} antwoorden waren correct"
 NUMBER_OF_QUESTIONS = "Je hebt {} vragen geantwoord."
@@ -21,8 +20,12 @@ WRONG_ANSWERS = "{} antwoorden waren fout"
 WRONG_GUESS = 'Nee hoor, het juiste lidwoord is \'{}\'.'
 WRONGNUMBEROFFIELDS = "Number of fields in line number {} is not as expected"
 
+# name of the directory for vocabularies
+SOURCES = "vocabularies"
 
 def chose_vocabulary(file_name):
+    file_name = os.path.join(SOURCES, file_name)
+    print(f'file_name is: {file_name}')
     with codecs.open(file_name, 'r', 'UTF-8') as input_file:
         # all_vocabulary contains all records in file
         all_vocabulary = [row.rstrip('\r\n').split('\t') for row in input_file]
@@ -31,12 +34,12 @@ def chose_vocabulary(file_name):
 
 
 def summarize_performance(right, wrong, number_of_tries):
-    print("\n############################################\n")
+    print("\n" + 45 * "#" + "\n")
     print(RESULT)
     print(NUMBER_OF_QUESTIONS.format(str(number_of_tries)))
     print(CORRECT_ANSWERS.format(right))
     print(WRONG_ANSWERS.format(wrong))
-    print("\n############################################\n")
+    print("\n" + 45 * "#" + "\n")
 
 
 def make_questions(tries, nouns_dct):
@@ -65,23 +68,17 @@ def main():
     parser.add_argument('-n', dest='number_of_words', default=10,
                         help='Number of words to practice', type=int)
     parser.add_argument('-l', dest='list', help='Name of the list to practice',
-                        default="de_fundatie_text.txt")
+                        default='de_fundatie_text.txt')
 
     args = parser.parse_args()
 
     vocabulary_file_name = args.list
     number_of_tries = args.number_of_words
 
-    # TODO write a file with common constants and functions
-    # if DEBUG:
-    #     # check number of fields
-    #     check_number_of_fields(vocabulary_file_name)
-    
     chosen_vocabulary = chose_vocabulary(vocabulary_file_name)
     print(f"Beschikbare woorden: {len(chosen_vocabulary)}")
     right, wrong = make_questions(number_of_tries, chosen_vocabulary)
     summarize_performance(right, wrong, number_of_tries)
-
 
 
 if __name__ == "__main__":

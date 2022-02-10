@@ -1,5 +1,9 @@
+.gitignore
+.idea/
 .idea/*
-venv
-sucio.py
-new_vocabulary.txt
+.idea/misc.xml
+.idea/nl_naar_perfectie.iml
 lista_de_vocabulario.xlsx
+venv
+Dutch_wordnet.py
+tmp/
